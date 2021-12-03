@@ -72,7 +72,7 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 ---
 
 3. Какой IP адрес у вас в интернете?
-![Картинка screen2](img/screen2.jpg)
+![Картинка screen3](img/screen3.jpg)
 
 ---
 
