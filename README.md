@@ -52,6 +52,25 @@ Connection closed by foreign host.
 - укажите в ответе полученный HTTP код.
 - проверьте время загрузки страницы, какой запрос обрабатывался дольше всего?
 - приложите скриншот консоли браузера в ответ.
+
+Первый ответ http:
+```
+Request URL: http://stackoverflow.com/questions
+Request Method: GET
+Status Code: 307 Internal Redirect
+Referrer Policy: strict-origin-when-cross-origin
+Location: https://stackoverflow.com/questions
+Non-Authoritative-Reason: HSTS
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+DNT: 1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36
+``` 
+Дольше всего обрабатывался запрос questions(самый первый) если не считать ошибок с какими-то скриптами. Указан на скрине ниже.  
+![Картинка screen1](img/screen1.jpg)
+
+---
+
 3. Какой IP адрес у вас в интернете?
 4. Какому провайдеру принадлежит ваш IP адрес? Какой автономной системе AS? Воспользуйтесь утилитой `whois`
 5. Через какие сети проходит пакет, отправленный с вашего компьютера на адрес 8.8.8.8? Через какие AS? Воспользуйтесь утилитой `traceroute`
