@@ -202,8 +202,53 @@ gmail.com.              274     IN      A       108.177.14.17
 
 ---
 
-8. Проверьте PTR записи для IP адресов из задания 7. Какое доменное имя привязано к IP? воспользуйтесь утилитой `dig`
+8. Проверьте PTR записи для IP адресов из задания 7. Какое доменное имя привязано к IP? воспользуйтесь утилитой `dig`  
 
-В качестве ответов на вопросы можно приложите лог выполнения команд в консоли или скриншот полученных результатов.
+us@ubuntu:~$ dig -x  108.177.14.18
+```
+; <<>> DiG 9.16.1-Ubuntu <<>> -x 108.177.14.18
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 41195
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;18.14.177.108.in-addr.arpa.    IN      PTR
+
+;; ANSWER SECTION:
+18.14.177.108.in-addr.arpa. 13669 IN    PTR     lt-in-f18.1e100.net.
+
+;; Query time: 60 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Вс дек 05 13:36:23 +07 2021
+;; MSG SIZE  rcvd: 88
+```
+Т.е. для адреса 108.177.14.18 привязано имя `lt-in-f18.1e100.net.`
+Или вот: 
+```
+us@ubuntu:~$ dig -x 216.239.34.10
+
+; <<>> DiG 9.16.1-Ubuntu <<>> -x 216.239.34.10
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 61065
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;10.34.239.216.in-addr.arpa.    IN      PTR
+
+;; ANSWER SECTION:
+10.34.239.216.in-addr.arpa. 21600 IN    PTR     ns2.google.com.
+
+;; Query time: 63 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Вс дек 05 13:41:17 +07 2021
+;; MSG SIZE  rcvd: 83
+```
+К адресу 216.239.34.10 привязяно имя `ns2.google.com.`
 
 ---
